@@ -1,0 +1,25 @@
+libr (0.6.0-1) unstable; urgency=medium
+
+  * New native C GNOME thumbnailer for ELF executables
+  * Added gnome-elf-thumbnailer package
+  * Features high-quality SVG to PNG conversion with full color depth
+  * Creates professional gradient fallback thumbnails
+  * Integrates seamlessly with GNOME file manager
+  * Updated build dependencies for graphics libraries
+  * Modernized debian packaging (debhelper >= 10)
+  * Enhanced ELF thumbnailer with multi-desktop environment support
+  * Added dynamic icon theme detection for KDE, GNOME, XFCE, etc.
+  * Improved system icon fallback mechanism for GNOME, KDE, XFCE, etc.
+  * Added GTK3 dependencies for thumbnailer
+  * Enhanced desktop environment detection logic
+  * Improved icon search across multiple theme directories for GNOME, KDE, XFCE, etc.
+  * Added PNG, SVG, XPM format support with scaling for GNOME, KDE, XFCE, etc.
+
+ -- matu6968 <wierzejskimateusz8@gmail.com>  Mon, 09 Jun 2025 20:00:00 +0000
+
+libr (0.5.0-1) unstable; urgency=low
+
+  * Initial ELF resource library implementation
+  * Support for storing and retrieving resources in ELF binaries
+
+ -- Erich E. Hoover <ehoover@mines.edu>  Sat, 05 Mar 2011 12:00:00 +0000 

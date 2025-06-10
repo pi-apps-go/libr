@@ -8,15 +8,7 @@ libr.pc
 stamp-h1
 po/POTFILES
 po/remove-potcdate.sed
-Makefile
-Makefile.in
-configure
-config.status
-config.sub
-config.guess
-debian/changelog
 config.h
-ltmain.sh
 aclocal.m4
 libtool
 m4/ltversion.m4
