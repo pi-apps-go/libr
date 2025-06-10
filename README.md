@@ -2,6 +2,9 @@
 
 See the INSTALL file for general installation instructions.
 
+## What happened to the original and what does it bring new?
+This library is a fixed up version intended to work on modern systems, due to the fact the original hasn't been maintained since 2011 and things have changed since then.
+
 ## What is the purpose of this library?
 This library is intended to provide an easy to use mechanism for managing
 (embedding, retrieving, deleting) resources in ELF binaries.  The library
