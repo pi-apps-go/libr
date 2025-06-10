@@ -31,6 +31,24 @@ most applications.  Only a special class of application (primarily elfres)
 needs to actually add and remove resources in a binary, most applications
 need only read resources already added by elfres.
 
+## How can i build libr0, libr-dev and gnome-elf-thumbnailer .deb packages?
+1. Install dependencies:
+```bash
+sudo apt-get install build-essential autotools-dev libtool pkg-config
+sudo apt-get install libgtk-2.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev librsvg2-dev gettext
+```
+1. Clone libr and gnome-elf-thumbnailer in the same directory:
+```bash
+git clone https://github.com/pi-apps-go/libr
+git clone https://github.com/pi-apps-go/gnome-elf-thumbnailer
+```
+2. Compile the build:
+```bash
+cd libr
+dpkg-buildpackage -us -uc
+```
+You should see now built binaries and packaged in .deb format under debian-build.
+
 ## NOTICE! This library is licensed under the LGPL v2.1 while the backend for libbfd is licensed under the LGPL v3.  
 You may choose to distribute your 
 modifications to this variant of the library under the LGPL v3, in accordance
