@@ -1,0 +1,177 @@
+
+#ifdef __LINK_AT_RUNTIME__
+DEFINE_SYMBOL(long, bfd_canonicalize_reloc,
+	bfd *abfd, asection *sec, arelent **loc, asymbol **syms);
+DEFINE_SYMBOL(bfd_boolean, bfd_close,
+	bfd *abfd);
+DEFINE_SYMBOL(bfd_boolean, bfd_check_format,
+	bfd *abfd, bfd_format format);
+DEFINE_SYMBOL(const char *, bfd_errmsg,
+	bfd_error_type error_tag);
+DEFINE_SYMBOL(enum bfd_architecture, bfd_get_arch,
+	bfd *abfd);
+DEFINE_SYMBOL(bfd_error_type, bfd_get_error,
+	void);
+DEFINE_SYMBOL(unsigned long, bfd_get_mach,
+	bfd *abfd);
+DEFINE_SYMBOL(long, bfd_get_reloc_upper_bound,
+	bfd *abfd, asection *sect);
+DEFINE_SYMBOL(bfd_boolean, bfd_get_section_contents,
+	bfd *abfd, asection *section, void *location, file_ptr offset, 
+bfd_size_type count);
+DEFINE_SYMBOL(asection *, bfd_make_section,
+	bfd *, const char *name);
+DEFINE_SYMBOL(asection *, bfd_make_section_anyway_with_flags,
+	bfd *abfd, const char *name, flagword flags);
+DEFINE_SYMBOL(bfd *, bfd_openr, const char *filename,
+	const char *target);
+DEFINE_SYMBOL(bfd *, bfd_openw,
+	const char *filename, const char *target);
+DEFINE_SYMBOL(bfd_boolean, bfd_set_file_flags,
+	bfd *abfd, flagword flags);
+DEFINE_SYMBOL(void, bfd_set_reloc,
+	bfd *abfd, asection *sec, arelent **rel, unsigned int count);
+DEFINE_SYMBOL(bfd_boolean, bfd_set_section_contents,
+	bfd *abfd, asection *section, const void *data, file_ptr offset, 
+bfd_size_type count);
+DEFINE_SYMBOL(bfd_boolean, bfd_set_format,
+	bfd *abfd, bfd_format format);
+DEFINE_SYMBOL(bfd_boolean, bfd_set_section_flags,
+	bfd *abfd, asection *sec, flagword flags);
+DEFINE_SYMBOL(bfd_boolean, bfd_set_section_size,
+	bfd *abfd, asection *sec, bfd_size_type val);
+DEFINE_SYMBOL(bfd_boolean, bfd_set_start_address,
+	bfd *abfd, bfd_vma vma);
+DEFINE_SYMBOL(bfd_boolean, bfd_set_symtab,
+	bfd *abfd, asymbol **location, unsigned int count);
+
+#define bfd_canonicalize_reloc             
+OVERRIDE_SYMBOL(bfd_canonicalize_reloc)
+#define bfd_close                          OVERRIDE_SYMBOL(bfd_close)
+#define bfd_check_format                   
+OVERRIDE_SYMBOL(bfd_check_format)
+#define bfd_errmsg                         OVERRIDE_SYMBOL(bfd_errmsg)
+#define bfd_get_arch                       OVERRIDE_SYMBOL(bfd_get_arch)
+#define bfd_get_error                      
+OVERRIDE_SYMBOL(bfd_get_error)
+#define bfd_get_mach                       OVERRIDE_SYMBOL(bfd_get_mach)
+#define bfd_get_reloc_upper_bound          
+OVERRIDE_SYMBOL(bfd_get_reloc_upper_bound)
+#define bfd_get_section_contents           
+OVERRIDE_SYMBOL(bfd_get_section_contents)
+#define bfd_make_section                   
+OVERRIDE_SYMBOL(bfd_make_section)
+#define bfd_make_section_anyway_with_flags 
+OVERRIDE_SYMBOL(bfd_make_section_anyway_with_flags)
+#define bfd_openr                          OVERRIDE_SYMBOL(bfd_openr)
+#define bfd_openw                          OVERRIDE_SYMBOL(bfd_openw)
+#define bfd_set_file_flags                 
+OVERRIDE_SYMBOL(bfd_set_file_flags)
+#define bfd_set_format                     
+OVERRIDE_SYMBOL(bfd_set_format)
+#define bfd_set_reloc                      
+OVERRIDE_SYMBOL(bfd_set_reloc)
+#define bfd_set_section_contents           
+OVERRIDE_SYMBOL(bfd_set_section_contents)
+#define bfd_set_section_flags              
+OVERRIDE_SYMBOL(bfd_set_section_flags)
+#define bfd_set_section_size               
+OVERRIDE_SYMBOL(bfd_set_section_size)
+#define bfd_set_start_address              
+OVERRIDE_SYMBOL(bfd_set_start_address)
+#define bfd_set_symtab                     
+OVERRIDE_SYMBOL(bfd_set_symtab)
+
+SYMBOL_TABLE(libbfd_symbols,
+	SYMBOL(bfd_openr),
+	SYMBOL(bfd_set_format),
+);
+#endif
+
+#include <librsvg/rsvg.h>
+
+DEFINE_SYMBOL(void, rsvg_init, void);
+DEFINE_SYMBOL(RsvgHandle *, rsvg_handle_new, void);
+DEFINE_SYMBOL(GdkPixbuf *, rsvg_handle_get_pixbuf, RsvgHandle *handle);
+DEFINE_SYMBOL(gboolean, rsvg_handle_close, RsvgHandle * handle, GError ** error);
+DEFINE_SYMBOL(void, rsvg_handle_get_dimensions, RsvgHandle * handle, RsvgDimensionData * dimension_data);
+DEFINE_SYMBOL(gboolean, rsvg_handle_write, RsvgHandle * handle, const guchar * buf, gsize count, GError ** error);
+DEFINE_SYMBOL(void, rsvg_handle_set_size_callback, RsvgHandle * handle, RsvgSizeFunc size_func, gpointer user_data, GDestroyNotify user_data_destroy);
+
+#define rsvg_init                     OVERRIDE_SYMBOL(rsvg_init)
+#define rsvg_handle_new               OVERRIDE_SYMBOL(rsvg_handle_new)
+#define rsvg_handle_get_pixbuf        OVERRIDE_SYMBOL(rsvg_handle_get_pixbuf)
+#define rsvg_handle_close             OVERRIDE_SYMBOL(rsvg_handle_close)
+#define rsvg_handle_write             OVERRIDE_SYMBOL(rsvg_handle_write)
+#define rsvg_handle_set_size_callback OVERRIDE_SYMBOL(rsvg_handle_set_size_callback)
+#define rsvg_handle_get_dimensions    OVERRIDE_SYMBOL(rsvg_handle_get_dimensions)
+
+SYMBOL_TABLE(librsvg_symbols,
+	SYMBOL(rsvg_init),
+	SYMBOL(rsvg_handle_new),
+	SYMBOL(rsvg_handle_close),
+	SYMBOL(rsvg_handle_write),
+	SYMBOL(rsvg_handle_get_pixbuf),
+	SYMBOL(rsvg_handle_get_dimensions),
+	SYMBOL(rsvg_handle_set_size_callback),
+);
+
+/*
+ * Scale the SVG image to the required icon size
+ */
+static void rsvg_set_iconsize(int *width, int *height, gpointer data)
+{
+	float multiplier = *(float*)data;
+	
+	(*width) *= multiplier;
+	(*height) *= multiplier;
+}
+
+	if(!rsvg_linked)
+	{
+		if(!LOAD_SYMBOLS("librsvg-2.so", librsvg_symbols))
+		{
+			// libr_icon_gtk requires that your application be linked to librsvg
+			return NULL;
+		}
+	}
+		RsvgHandle *rsvg = NULL;
+		libr_icontype_t type;
+		type = icon_handle->type;
+		if(type == LIBR_SVG)
+		{
+			RsvgHandle *rsvg = rsvg_handle_new();
+			if(rsvg != NULL)
+			{
+				if(rsvg_handle_write(rsvg, iconfile, iconfile_size, NULL))
+				{
+					if(rsvg_handle_close(rsvg, NULL))
+					{
+						RsvgDimensionData dim;
+						float multiplier;
+						int old_size;
+						
+						rsvg_handle_get_dimensions(rsvg, &dim);
+						if(dim.width > dim.height)
+							old_size = dim.width;
+						else
+							old_size = dim.height;
+						multiplier = ((float)sizes[i])/old_size;
+						rsvg_handle_set_size_callback(rsvg, rsvg_set_iconsize, (void *) &multiplier, NULL);
+						icon = rsvg_handle_get_pixbuf(rsvg);
+						icons = g_list_append(icons, icon);
+					}
+				}
+			}
+			free(iconfile);
+		}
+		else if(type == LIBR_PNG)
+		{
+		}
+		else
+		{
+			/* Unhandled image type */
+			continue;
+		}
+
+

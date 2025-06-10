@@ -1,0 +1,48 @@
+Source: libr
+Priority: optional
+Maintainer: Erich E. Hoover <ehoover@mines.edu>
+Build-Depends: debhelper (>= 10), autotools-dev, pkg-config, libgtk-3-dev,
+ binutils-dev, doxygen, libcairo2-dev, librsvg2-dev, libgdk-pixbuf2.0-dev
+Standards-Version: 4.1.3
+Section: libs
+Homepage: http://www.compholio.com/elficon/
+
+Package: libr-dev
+Section: libdevel
+Architecture: any
+Depends: libr0 (= ${binary:Version}), ${misc:Depends}
+Description: ELF binary resource library - development files
+ Store and retrieve resources from ELF binaries.
+ .
+ This package contains the development files needed to build applications
+ that use the libr library.
+
+Package: libr0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: ELF binary resource library
+ Store and retrieve resources from ELF binaries.
+ .
+ This library allows storing and retrieving resources (such as icons)
+ directly within ELF executable files.
+
+Package: gnome-elf-thumbnailer
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libr0 (>= ${source:Version})
+Recommends: elficon
+Description: GNOME thumbnailer for ELF executables with embedded icons
+ A native C thumbnailer for GNOME that generates thumbnails for ELF
+ executable files. It can extract embedded icons from ELF files using
+ the elficon utility and libr library, or create informative fallback
+ thumbnails showing the architecture and executable type.
+ .
+ Features:
+  * Extracts embedded SVG icons with full color depth
+  * Creates professional gradient fallback thumbnails
+  * Fast native C implementation using Cairo and librsvg
+  * Integrates seamlessly with GNOME file manager
+ .
+ This package integrates with GNOME's thumbnailing system to provide
+ rich visual previews of executable files in the file manager.

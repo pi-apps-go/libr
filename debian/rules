@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+# Enable all hardening flags
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# Uncomment this to turn on verbose mode
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --prefix=/usr
+
+override_dh_auto_build:
+	dh_auto_build
+	# Build gnome-elf-thumbnailer
+	$(MAKE) -C ../gnome-elf-thumbnailer
+
+override_dh_auto_install:
+	dh_auto_install
+	# Install gnome-elf-thumbnailer
+	$(MAKE) -C ../gnome-elf-thumbnailer DESTDIR=$(CURDIR)/debian/tmp install
+
+override_dh_auto_clean:
+	dh_auto_clean
+	# Clean gnome-elf-thumbnailer
+	[ ! -f ../gnome-elf-thumbnailer/Makefile ] || $(MAKE) -C ../gnome-elf-thumbnailer clean 

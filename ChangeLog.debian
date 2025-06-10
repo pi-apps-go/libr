@@ -1,0 +1,4 @@
+libr (0.4.2) karmic; urgency=low
+  * libr Debian maintainer and upstream author are identical.
+    Therefore see also normal changelog file for Debian changes.
+ -- Erich E. Hoover <ehoover@mines.edu>  Thu, 10 Sep 2009 13:47:00 -0600

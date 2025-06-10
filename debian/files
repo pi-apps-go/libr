@@ -1,0 +1,6 @@
+gnome-elf-thumbnailer-dbgsym_0.6.0-1_amd64.ddeb debug optional automatic=yes
+gnome-elf-thumbnailer_0.6.0-1_amd64.deb graphics optional
+libr-dev_0.6.0-1_amd64.deb libdevel optional
+libr0-dbgsym_0.6.0-1_amd64.ddeb debug optional automatic=yes
+libr0_0.6.0-1_amd64.deb libs optional
+libr_0.6.0-1_amd64.buildinfo libs optional

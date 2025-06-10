@@ -1,0 +1,20 @@
+printf("loads...\n");
+if(!LOAD_SYMBOLS("libgtk-x11-2.0", null_symbols))
+printf("err 0\n");
+if(!LOAD_SYMBOLS("libgdk-x11-2.0", null_symbols))
+printf("err 1\n");
+if(!LOAD_SYMBOLS("libatk-1.0", null_symbols))
+printf("err 2\n");
+if(!LOAD_SYMBOLS("libgdk_pixbuf-2.0", null_symbols))
+printf("err 3\n");
+if(!LOAD_SYMBOLS("libpangocairo-1.0", null_symbols))
+printf("err 4\n");
+if(!LOAD_SYMBOLS("libpango-1.0", null_symbols))
+printf("err 5\n");
+if(!LOAD_SYMBOLS("libcairo", null_symbols))
+printf("err 6\n");
+if(!LOAD_SYMBOLS("libfreetype", null_symbols))
+printf("err 7\n");
+if(!LOAD_SYMBOLS("libxml2", null_symbols))
+printf("err 8\n");
+	
