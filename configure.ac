@@ -83,6 +83,16 @@ elif test "$UNAMEM" = "i686" ; then
 	ARCH="i386";
 elif test "$UNAMEM" = "x86_64"; then
 	ARCH="amd64";
+elif test "$UNAMEM" = "aarch64"; then
+	ARCH="arm64";
+elif test "$UNAMEM" = "armv7l"; then
+	ARCH="arm";
+elif test "$UNAMEM" = "armv6l"; then
+	ARCH="arm";
+elif test "$UNAMEM" = "arm"; then
+	ARCH="arm";
+elif test "$UNAMEM" = "riscv64"; then
+	ARCH="riscv64";
 fi
 if test "$ARCH" = "i386" ; then
 	CFLAGS="$CFLAGS -m32";
@@ -90,6 +100,15 @@ if test "$ARCH" = "i386" ; then
 elif test "$ARCH" = "amd64" ; then
 	CFLAGS="$CFLAGS -m64";
 	AC_MSG_NOTICE([Ready for 64-bit compilation.]);
+elif test "$ARCH" = "arm64" ; then
+	# ARM 64-bit doesn't need special flags like x86
+	AC_MSG_NOTICE([Ready for ARM 64-bit compilation.]);
+elif test "$ARCH" = "arm" ; then
+	# ARM 32-bit doesn't need special flags like x86
+	AC_MSG_NOTICE([Ready for ARM 32-bit compilation.]);
+elif test "$ARCH" = "riscv64" ; then
+	# RISC-V 64-bit doesn't need special flags like x86
+	AC_MSG_NOTICE([Ready for RISC-V 64-bit compilation.]);
 else
 	AC_MSG_ERROR([Target architecture ${ARCH} is invalid!]);
 fi

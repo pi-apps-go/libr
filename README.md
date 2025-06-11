@@ -34,8 +34,8 @@ need only read resources already added by elfres.
 ## How can i build libr0, libr-dev and gnome-elf-thumbnailer .deb packages?
 1. Install dependencies:
 ```bash
-sudo apt-get install build-essential autotools-dev libtool pkg-config
-sudo apt-get install libgtk-2.0-dev libglib2.0-dev libgdk-pixbuf2.0-dev librsvg2-dev gettext
+sudo apt-get install build-essential autotools-dev libtool pkg-config doxygen
+sudo apt-get install libgtk-2.0-dev libglade2-dev binutils-dev libglib2.0-dev libgdk-pixbuf2.0-dev librsvg2-dev gettext
 ```
 1. Clone libr and gnome-elf-thumbnailer in the same directory:
 ```bash

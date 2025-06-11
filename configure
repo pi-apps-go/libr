@@ -15043,6 +15043,14 @@ elif test "$UNAMEM" = "i686" ; then
 	ARCH="i386";
 elif test "$UNAMEM" = "x86_64"; then
 	ARCH="amd64";
+elif test "$UNAMEM" = "aarch64"; then
+	ARCH="arm64";
+elif test "$UNAMEM" = "armv7l"; then
+	ARCH="arm";
+elif test "$UNAMEM" = "armv6l"; then
+	ARCH="arm";
+elif test "$UNAMEM" = "arm"; then
+	ARCH="arm";
 fi
 if test "$ARCH" = "i386" ; then
 	CFLAGS="$CFLAGS -m32";
@@ -15052,6 +15060,14 @@ elif test "$ARCH" = "amd64" ; then
 	CFLAGS="$CFLAGS -m64";
 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: Ready for 64-bit compilation." >&5
 printf "%s\n" "$as_me: Ready for 64-bit compilation." >&6;};
+elif test "$ARCH" = "arm64" ; then
+	# ARM 64-bit doesn't need special flags like x86
+	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: Ready for ARM 64-bit compilation." >&5
+printf "%s\n" "$as_me: Ready for ARM 64-bit compilation." >&6;};
+elif test "$ARCH" = "arm" ; then
+	# ARM 32-bit doesn't need special flags like x86
+	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: Ready for ARM 32-bit compilation." >&5
+printf "%s\n" "$as_me: Ready for ARM 32-bit compilation." >&6;};
 else
 	as_fn_error $? "Target architecture ${ARCH} is invalid!" "$LINENO" 5;
 fi
